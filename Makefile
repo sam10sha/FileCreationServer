@@ -6,7 +6,7 @@ OBJ_DIR	= obj
 LIB_DIR	= lib
 BIN_DIR	= bin
 
-CLIENT		= $(BIN_DIR)/client
+CLIENT		= $(BIN_DIR)/upload
 LIBCREATOR_SO	= $(LIB_DIR)/libCreator.so
 CLIENT_CREATE_O	= $(OBJ_DIR)/client_create.o
 CLIENT_CREATE_H = $(SRC_DIR)/client_create.h
@@ -18,7 +18,7 @@ RPATH	= .:../lib:lib
 
 
 
-client: $(CLIENT)
+upload: $(CLIENT)
 
 $(CLIENT): $(LIBCREATOR_SO) $(MAIN_C) | $(BIN_DIR)
 	$(CC) $(MAIN_C) -Llib -lCreator -o $@ $(WALL) -Wl,-rpath,$(RPATH)
